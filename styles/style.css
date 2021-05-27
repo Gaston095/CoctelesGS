@@ -1,0 +1,498 @@
+* {
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+header {
+	width: 100%;
+	height: 65%
+}
+
+
+.navbar {
+	display: flex;
+	position: fixed;
+	justify-content: space-between;
+	align-items: center;
+	height: 65px;
+	width: 100%;
+	background: #000000;
+	z-index: 10;
+}
+
+.navbar .logo {
+	margin: 15px;
+	color: #FFF;
+}
+
+.navbar li {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 20px;
+	margin-top: 35px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.navbar a:hover {
+	color:#a0294c;
+}
+
+.navbar a {
+	text-decoration: none;
+	color: #FFF;
+	padding: 8px;
+}
+
+.navbar .menu-bar {
+	font-size: 23px;
+	margin: 15px;
+	color: #FFF;
+	cursor: pointer;
+}
+
+.navbar .menu {
+	position: fixed;
+	top: 65px;
+	width: 300px;
+	height: calc(100% - 65px);
+	align-items: center;
+	background: linear-gradient(0deg,#222,#000);
+	right: -100vw;
+	transition: all 2s;
+}
+
+.navbar .menu-toggle {
+	right: 0px;
+	transition: all 0.4s;
+}
+
+/*#### MENU ####*/
+
+
+.portada {
+	height: 365px;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	background: #000;
+}
+
+	.portada__titulo {
+		height: 100%;
+		background: #000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+	}
+
+		.portada__titulo-h2 {
+			color: #a0294c;
+			font-size: 32px;
+			text-shadow: 1px 1px 0 #222;
+			border-right: 0.10em solid orange;
+			overflow: hidden;
+			white-space: nowrap;
+			animation: typing 3.5s steps(30, end), blink step-end 0.5s 8;
+			
+		}
+
+	.portada__imagen {
+		width: 50%;
+		height: 100%;
+		background-image: url(../images/portada3.jpg);
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+
+/*## ANIMACION DEL TITULO ##*/
+
+@keyframes typing {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+/*## ANIMACION DEL CURSOR ##*/
+
+@keyframes blink {
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: orange;
+	}
+}
+
+
+
+
+.bienvenida {
+	width: 100%;
+	height: 300px;
+	/*background-color: #000;*/
+	background-image: url(../images/fondoBienvenida2.jpg);
+	background-size: contain;
+	background-position: center;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+	.bienvenida__texto {
+		position: relative;
+		height: 150px;
+		width: 50%;
+		text-align: center;
+		margin: 0 15px;
+	}
+
+	.bienvenida__texto-titulo{
+		color: #FFF;
+		width: 100%;
+		font-size: 22px;
+		padding: 13px;
+
+	}
+
+	.bienvenida__texto-parrafo {
+		height: 100%;
+		width: 100%;
+		color: #FFF;
+		font-size: 17px;
+	}
+
+
+	.bienvenida__img {
+		height: 150px;
+		position: relative;
+	}
+
+
+.bienvenida:before {
+	content: "";
+	width: 100%;
+	height: 300px;
+	position: absolute;
+	background:linear-gradient(180deg,#000,#222);
+	opacity: 0.9;
+}
+
+
+/*#### MENU CATEGORIAS ####*/
+
+
+main {
+	width: 100%;
+	height: calc(100% - 830px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #ebebeb; 
+}
+
+
+.main {
+	width: 100%;
+	height: 130px;
+	background-image: url(../images/fondo1.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	border-top: 1px solid #333; 
+	display: flex;
+	align-items: center;
+}
+
+.main:before {
+	content: "";
+	width: 100%;
+	height: 130px;
+	position: absolute;
+	background: linear-gradient(90deg, black, #333);
+	opacity: 0.7;
+}
+
+.main__titulo {
+	color: #a0294c;
+	padding: 7px;
+	position: relative;
+	font-size: 32px;
+    text-shadow: 1px 1px 0 #222;
+    margin-left: 10%;
+}
+
+
+
+
+	/*#### TARJETA CON HOVER*/
+
+
+.wrap {
+	width: 90%;
+	margin: 50px auto;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.tarjeta-wrap {
+	margin:10px;
+	-webkit-perspective: 800;
+	perspective: 800;
+}
+
+.tarjeta {
+	width: 300px;
+	height: 350px;
+	/*background: linear-gradient(rgb(1,80,93),rgb(74,1,56));*/
+	background: linear-gradient(#222,#000);
+	position: relative;
+	transform-style: preserve-3d;
+	transition: .7s ease;
+	box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65)
+}
+
+.adelante, .atras {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+
+.adelante {
+	width: 100%;
+	background: url(../images/portada2.jpg);
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 15px;
+	text-align: center;
+	color: #a0294c;
+	font-size: 21px;
+	text-shadow: 1px 1px 0 #222;
+}
+
+.atras {
+	transform: rotateY(180deg);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	padding: 15px 30px;
+	text-align: start;
+	color: #fff;
+
+}
+
+	.atras__preparacion {
+		font-size: 13px;
+		letter-spacing: 1px;
+	}
+
+.tarjeta-wrap:hover .tarjeta {
+	transform: rotateY(180deg);
+}
+
+
+/**## FONDOS PARTE ADELANTE TARJETAS##*/
+
+.trago1 {
+	background-image: url(../images/ajerkoniak.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.trago2 {
+	background-image: url(../images/margarita.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.trago3 {
+	background-image: url(../images/cubaLibre.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.trago4 {
+	background-image: url(../images/cosmopolitan.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.trago5 {
+	background-image: url(../images/ginTonicfr.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.trago6 {
+	background-image: url(../images/tequilaSunrise.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.trago7 {
+	background-image: url(../images/blackRussian.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.trago8 {
+	background-image: url(../images/mojito.png);
+	background-size: cover;
+	background-position: center;
+}
+
+.trago9 {
+	background-image: url(../images/kirRoyale.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+
+
+
+/*### FOOTER ###*/
+
+footer {
+	height: 100px;
+	width: 100%;
+	float: left;
+	background-color: #000;
+	color: #fff;
+}
+
+.contenedorFooter {
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/fondo1.jpg);
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+}
+
+.contenedorFooter:before {
+	content: "";
+	width: 100%;
+	height: 100px;
+	position: absolute;
+	background:linear-gradient(180deg,#000,#222);
+	opacity: 0.7;
+}
+
+.contenedorFooter .logo {
+	padding: 8px 0px;
+	position: relative;
+	color: #a0294c;
+	font-size: 32px;
+	text-shadow: 1px 1px 0 #222;
+}
+
+.contenedorFooter__pie {
+	background: #000;
+	width: 100%;
+	text-align: center;
+	padding: 5px 0px;
+	position: relative;
+}
+
+.contenedorFooter__pie-h3 {
+	font-size: 17px;
+	font-weight: normal;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+	.navbar .menu{
+		width: 100vw;
+		height: calc(100% - 65px);
+		transition: all .7s;
+	}
+
+		.portada__titulo-h2 {
+			text-align: center;
+			font-size: 25px;
+		}
+
+	.portada__imagen {
+		display: none;
+	}
+
+
+	/*##BIENVENIDA##*/
+
+	.bienvenida__texto-titulo{
+		font-size: 17px;
+	}
+
+
+	/*##MAIN##*/
+
+	.main {
+		background-position: center;
+	}
+
+
+	/*##TARJETAS##*/
+
+	.wrap {
+		width: 100%;
+	}
+
+	.tarjeta {
+		width: 160px;
+		height: 240px;
+	}
+
+	.atras {
+		padding: 10px;
+		font-size: 10px;
+	}
+
+		.atras__preparacion {
+			letter-spacing: 0;
+			padding: 5px;
+		}
+
+	.adelante {
+		font-size: 17px;
+	}
+
+	/*## FOOTER ##*/
+
+	.contenedorFooter__pie-h3 {
+		font-size: 15px;
+	}
+
+
+}
+
+}
+
+@media screen and (max-width: 850px) and (orientation:landscape) {
+	.tarjeta {
+		width: 200px;
+		height: 280px;
+	}
+}
